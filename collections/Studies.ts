@@ -44,7 +44,6 @@ const Study: CollectionConfig = {
         position: "sidebar",
       },
     },
-
     slug,
     meta,
   ],

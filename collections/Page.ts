@@ -39,12 +39,6 @@ export const Page: CollectionConfig = {
       required: true,
     },
     {
-      name: "image",
-      label: "Featured Image",
-      type: "upload",
-      relationTo: "media",
-    },
-    {
       name: "layout",
       label: "Page Layout",
       type: "blocks",

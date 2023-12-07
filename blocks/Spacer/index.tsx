@@ -1,20 +1,41 @@
 import { Block } from "payload/types";
 
+export type Type = {
+  size: "small" | "medium" | "large";
+};
+
 const Spacer: Block = {
   slug: "spacer",
+  labels: {
+    singular: "Spacer",
+    plural: "Spacers",
+  },
   fields: [
     {
       name: "size",
-      label: "size",
+      label: "Size",
       type: "radio",
+      required: true,
+      defaultValue: "medium",
       options: [
-        { label: "Small", value: "small" },
-        { label: "Medium", value: "medium" },
-        { label: "Large", value: "large" },
+        {
+          label: "Small",
+          value: "small",
+        },
+        {
+          label: "Medium",
+          value: "medium",
+        },
+        {
+          label: "Large",
+          value: "large",
+        },
       ],
       admin: {
-        width: "50%",
+        layout: "horizontal",
       },
     },
   ],
 };
+
+export default Spacer;

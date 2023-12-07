@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import Page from "./collections/Page";
 import Media from "./collections/Media";
 import FormSubmission from "./collections/FormSubmission";
-import Study from "./collections/Studies";
+import Study from "./collections/Study";
 import Category from "./collections/Category";
 import MegaMenu from "./globals/MegaMenu";
 import Footer from "./globals/Footer";

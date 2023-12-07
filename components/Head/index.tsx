@@ -2,14 +2,15 @@ import React from 'react';
 import NextHead from 'next/head';
 import getConfig from 'next/config';
 import { useRouter } from 'next/router';
+import colors from '../../css/colors';
 
 const { publicRuntimeConfig: { SERVER_URL } } = getConfig();
 
-const defaultDescription = 'Boilerplate for combining Payload and Next.js into a single Node.js server';
-const defaultTitle = 'Payload + Next.js Custom Server';
-const titleSuffix = ' | Payload';
+const defaultDescription = 'Boilerplate for combining Payload CMS and NextJS into a single Node server';
+const defaultTitle = 'Payload CMS + NextJS Custom Server';
+const titleSuffix = ' | Payload CMS';
 const defaultOGImage = `${SERVER_URL}/images/og-image.jpg`;
-const defaultKeywords = 'Next.js, Payload, boilerplate';
+const defaultKeywords = 'NextJS, Payload CMS, boilerplate';
 
 type Props = {
   title?: string,
@@ -23,7 +24,7 @@ const Head: React.FC<Props> = ({ title, description, ogImage, keywords }) => {
 
   const getTitle = () => {
     if (title) return title + titleSuffix;
-    return defaultTitle + titleSuffix;
+    return defaultTitle;
   };
 
   return (
@@ -31,11 +32,7 @@ const Head: React.FC<Props> = ({ title, description, ogImage, keywords }) => {
       <title>
         {getTitle()}
       </title>
-      <link
-        rel="icon"
-        type="image/x-icon"
-        href="/favicon.svg"
-      />
+
       <meta
         name="description"
         content={description || defaultDescription}

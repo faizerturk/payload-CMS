@@ -4,7 +4,7 @@ import { Image } from "../blocks/Image/Config";
 import { Type as ImageType } from "../blocks/Image/Component";
 import { CallToAction } from "../blocks/CallToAction/Config";
 import { Type as CallToActionType } from "../blocks/CallToAction/Component";
-import { Content } from "../blocks/Content/Config";
+import { Content } from "../blocks/Content";
 import { Type as ContentType } from "../blocks/Content/Component";
 import slug from "../fields/slug";
 import meta from "../fields/meta";

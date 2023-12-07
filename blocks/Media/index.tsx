@@ -1,15 +1,24 @@
 import { Block } from 'payload/types';
+import { Type as MediaType } from '../../collections/Media';
 
-export const Image: Block = {
-  slug: 'image',
+export type Type = {
+  blockType: 'media'
+  blockName?: string
+  media: MediaType
+  caption?: any
+  type: 'normal' | 'wide' | 'fullscreen'
+}
+
+export const Media: Block = {
+  slug: 'media',
   labels: {
-    singular: 'Image',
-    plural: 'Images',
+    singular: 'Media Block',
+    plural: 'Media Blocks',
   },
   fields: [
     {
-      name: 'image',
-      label: 'Image',
+      name: 'media',
+      label: 'Media',
       type: 'upload',
       relationTo: 'media',
       required: true,

@@ -1,40 +1,41 @@
-import { Block } from "payload/types";
-import backgroundColor, {
-  Type as BackgroundColorType,
-} from "../../fields/backgroundColor";
-import link, { Type as LinkType } from "../../fields/link";
+import { Block } from 'payload/types';
+import backgroundColor, { Type as BackgroundColorType } from '../../fields/backgroundColor';
+import link, { Type as LinkType } from '../../fields/link';
 
 export type Action = {
-  link: LinkType;
-};
+  link: LinkType
+}
 
 export type Type = {
-  backgroundColor: BackgroundColorType;
-  content: unknown;
-  actions: Action[];
-};
+  backgroundColor: BackgroundColorType
+  content: unknown
+  actions: Action[]
+  blockType: 'call-to-action'
+}
 
 const CallToAction: Block = {
-  slug: "call-to-action",
+  slug: 'call-to-action',
   labels: {
-    singular: "Call to Action",
-    plural: "Calls to Action",
+    singular: 'Call to Action',
+    plural: 'Calls to Action',
   },
   fields: [
     backgroundColor,
     {
-      name: "content",
-      type: "richText",
-      label: "Content",
+      name: 'content',
+      type: 'richText',
+      label: 'Content',
       required: true,
     },
     {
-      name: "actions",
-      label: "Actions",
-      type: "array",
+      name: 'actions',
+      label: 'Actions',
+      type: 'array',
       minRows: 1,
       maxRows: 2,
-      fields: [link],
+      fields: [
+        link,
+      ],
     },
   ],
 };

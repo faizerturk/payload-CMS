@@ -1,39 +1,39 @@
-import { Block } from "payload/types";
+import { Block } from 'payload/types';
 
 export type Section = {
-  label: string;
-  description: string;
-};
+  label: string
+  description: string
+}
 
 export type Type = {
-  sections: Section[];
-  blockType: "sticky-content";
-};
+  sections: Section[]
+  blockType: 'sticky-content'
+}
 
 const StickyContent: Block = {
-  slug: "sticky-content",
+  slug: 'sticky-content',
   labels: {
-    singular: "Sticky Content Block",
-    plural: "Sticky Content Blocks",
+    singular: 'Sticky Content Block',
+    plural: 'Sticky Content Blocks',
   },
   fields: [
     {
-      name: "sections",
-      label: "Sections",
-      type: "array",
+      name: 'sections',
+      label: 'Sections',
+      type: 'array',
       minRows: 2,
       maxRows: 8,
       fields: [
         {
-          type: "text",
-          name: "label",
-          label: "Label",
+          type: 'text',
+          name: 'label',
+          label: 'Label',
           required: true,
         },
         {
-          type: "textarea",
-          name: "description",
-          label: "Description",
+          type: 'textarea',
+          name: 'description',
+          label: 'Description',
           required: true,
         },
       ],

@@ -1,12 +1,12 @@
-import React from "react";
-import { Cell, Grid } from "@faceless-ui/css-grid";
-import useStyles from "./css";
-import { Type } from ".";
-import Padding from "../../components/layout/Padding";
-import GridContainer from "../../components/layout/GridContainer";
-import RichText from "../../components/RichText";
-import BackgroundColor from "../../components/layout/BackgroundColor";
-import Gutter from "../../components/layout/Gutter";
+import React from 'react';
+import { Cell, Grid } from '@faceless-ui/css-grid';
+import useStyles from './css';
+import { Type } from '.';
+import Padding from '../../components/layout/Padding';
+import GridContainer from '../../components/layout/GridContainer';
+import RichText from '../../components/RichText';
+import BackgroundColor from '../../components/layout/BackgroundColor';
+import Gutter from '../../components/layout/Gutter';
 
 const colStyles = {
   oneThird: {
@@ -35,18 +35,21 @@ const Content: React.FC<Type> = ({
 
   return (
     <div className={classes.content}>
-      <Gutter left right>
+      <Gutter
+        left
+        right
+      >
         <BackgroundColor color={backgroundColor}>
-          <Padding top={paddingTop} bottom={paddingBottom}>
+          <Padding
+            top={paddingTop}
+            bottom={paddingBottom}
+          >
             <GridContainer className={classes.gridContainer}>
               {accentLine && (
-                <div
-                  className={[
-                    classes.accentLine,
-                    classes[`accentLine-${accentLineAlignment}`],
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
+                <div className={[
+                  classes.accentLine,
+                  classes[`accentLine-${accentLineAlignment}`],
+                ].filter(Boolean).join(' ')}
                 />
               )}
               <Grid>

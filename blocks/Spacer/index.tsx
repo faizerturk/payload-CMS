@@ -1,38 +1,39 @@
-import { Block } from "payload/types";
+import { Block } from 'payload/types';
 
 export type Type = {
-  size: "small" | "medium" | "large";
-};
+  size: 'small' | 'medium' | 'large'
+  blockType: 'spacer'
+}
 
 const Spacer: Block = {
-  slug: "spacer",
+  slug: 'spacer',
   labels: {
-    singular: "Spacer",
-    plural: "Spacers",
+    singular: 'Spacer',
+    plural: 'Spacers',
   },
   fields: [
     {
-      name: "size",
-      label: "Size",
-      type: "radio",
+      name: 'size',
+      label: 'Size',
+      type: 'radio',
       required: true,
-      defaultValue: "medium",
+      defaultValue: 'medium',
       options: [
         {
-          label: "Small",
-          value: "small",
+          label: 'Small',
+          value: 'small',
         },
         {
-          label: "Medium",
-          value: "medium",
+          label: 'Medium',
+          value: 'medium',
         },
         {
-          label: "Large",
-          value: "large",
+          label: 'Large',
+          value: 'large',
         },
       ],
       admin: {
-        layout: "horizontal",
+        layout: 'horizontal',
       },
     },
   ],

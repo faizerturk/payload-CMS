@@ -16,7 +16,7 @@ module.exports = {
     },
   },
   rules: {
-    quotes: ["error", "double"],
+    quotes: ["error", "double", "single"],
     "react/jsx-filename-extension": [
       2,
       { extensions: [".js", ".jsx", ".ts", ".tsx"] },

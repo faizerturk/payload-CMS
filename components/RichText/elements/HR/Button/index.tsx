@@ -1,21 +1,19 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useCallback } from 'react';
-import { Transforms } from 'slate';
-import { useSlate, ReactEditor } from 'slate-react';
-import { ElementButton } from 'payload/components/rich-text';
+import React, { useCallback } from "react";
+import { Transforms } from "slate";
+import { useSlate, ReactEditor } from "slate-react";
+import { ElementButton } from "payload/components/rich-text";
 
-const baseClass = 'rich-text-hr-button';
+const baseClass = "rich-text-hr-button";
 
 const insertHR = (editor) => {
-  const text = { text: ' ' };
+  const text = { text: " " };
   const hr = {
-    type: 'hr',
-    children: [
-      text,
-    ],
+    type: "hr",
+    children: [text],
   };
 
-  const nodes = [hr, { children: [{ text: '' }] }];
+  const nodes = [hr, { children: [{ text: "" }] }];
 
   if (editor.blurSelection) {
     Transforms.select(editor, editor.blurSelection);
@@ -24,7 +22,10 @@ const insertHR = (editor) => {
   Transforms.insertNodes(editor, nodes);
 
   const currentPath = editor.selection.anchor.path[0];
-  const newSelection = { anchor: { path: [currentPath + 1, 0], offset: 0 }, focus: { path: [currentPath + 1, 0], offset: 0 } };
+  const newSelection = {
+    anchor: { path: [currentPath + 1, 0], offset: 0 },
+    focus: { path: [currentPath + 1, 0], offset: 0 },
+  };
 
   Transforms.select(editor, newSelection);
   ReactEditor.focus(editor);
@@ -38,11 +39,7 @@ const ToolbarButton: React.FC<{ path: string }> = () => {
   }, [editor]);
 
   return (
-    <ElementButton
-      className={baseClass}
-      format="hr"
-      onClick={handleAddHR}
-    >
+    <ElementButton className={baseClass} format="hr" onClick={handleAddHR}>
       —
     </ElementButton>
   );
